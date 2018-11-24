@@ -19,4 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/articles', 'ArticleController@index');
 Route::get('/article/{id}', 'ArticleController@show');
+Route::get('/article/{id}/comments', 'CommentController@index');
 Route::get('/tags', 'TagController@index');
