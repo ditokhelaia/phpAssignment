@@ -2,13 +2,9 @@
 
 namespace App\Http\Resources;
 
-use App\Article;
-use App\Tag;
-use App\Article_tag;
-use App\Http\Resources\TagResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ArticleResource extends JsonResource
+class TagResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,12 +14,9 @@ class ArticleResource extends JsonResource
      */
     public function toArray($request)
     {
-
         return [
             'id' => $this->id,
-            'title'=> $this->title,
-            'created_at' => $this->created_at,
-            'tags' => TagResource::collection(Article::find($this->id)->tags)
+            'title'=> $this->title
         ];
     }
 }
