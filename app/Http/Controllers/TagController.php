@@ -49,7 +49,7 @@ class TagController extends Controller
      */
     public function show($id)
     {
-        return ArticleResource::collection(Tag::find($id)->articlesgi);
+        return ArticleResource::collection(Tag::find($id)->articles);
     }
 
     /**
