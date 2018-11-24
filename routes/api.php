@@ -21,3 +21,5 @@ Route::get('/articles', 'ArticleController@index');
 Route::get('/article/{id}', 'ArticleController@show');
 Route::get('/article/{id}/comments', 'CommentController@index');
 Route::get('/tags', 'TagController@index');
+Route::get('/tags/{id}/articles', 'TagController@show');
+

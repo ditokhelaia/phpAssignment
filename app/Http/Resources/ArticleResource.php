@@ -23,6 +23,7 @@ class ArticleResource extends JsonResource
             'id' => $this->id,
             'title'=> $this->title,
             'created_at' => $this->created_at,
+            'comment_count' => count(Article::find($this->id)->comments),
             'tags' => TagResource::collection(Article::find($this->id)->tags)
         ];
     }

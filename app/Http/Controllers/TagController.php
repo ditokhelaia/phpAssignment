@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
+use App\Http\Resources\ArticleResource;
 use App\Http\Resources\TagResource;
 use App\Tag;
 use Illuminate\Http\Request;
@@ -15,7 +17,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        return TagResource::collection(Tag::all());
     }
 
     /**
@@ -45,9 +47,9 @@ class TagController extends Controller
      * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function show(Tag $tag)
+    public function show($id)
     {
-        //
+        return ArticleResource::collection(Tag::find($id)->articlesgi);
     }
 
     /**

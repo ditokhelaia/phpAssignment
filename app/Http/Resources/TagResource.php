@@ -2,7 +2,11 @@
 
 namespace App\Http\Resources;
 
+use App\Article;
+use App\Tag;
+use App\Article_tag;
 use Illuminate\Http\Resources\Json\JsonResource;
+
 
 class TagResource extends JsonResource
 {
@@ -16,7 +20,8 @@ class TagResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'title'=> $this->title
+            'title'=> $this->title,
+            'article_count' => count(Tag::find($this->id)->articles)
         ];
     }
 }
